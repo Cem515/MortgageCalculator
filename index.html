@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Mortgage Calculator</title>
+  <h1 id="mainHeader">Mortgage Calculator</h1>
+</head>
+<body ng-controller="MortgageCalculator as vm">
+  <div id="mortgageInputs">
+<label id="loanBalance">Loan Balance</label>
+<input type="number" ng-model="balance" id="balanceLeft"/>
+
+<label id="apr">Annual Percent rate of Charge (APR)</label>
+<input type="number" ng-model="apr" min="1" max="100" id="percent"/>
+
+
+<label id="yearTerm">Years Remaining</label>
+<input type="number" ng-model="years" id="years"/>
+<div id="choose">
+  <label><input type="radio" ng-model="month" name="optradio" value ="12">Monthly</label>
+  <label><input type="radio" ng-model="bimonth" name="optradio" value = "6">Bimonthly</label>
+</div>
+</div>
+<button type="button">Calculate Mortgage</button>
+<p>{{vm.output}}</p>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
