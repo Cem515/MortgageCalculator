@@ -1,27 +1,32 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app', []);
+  angular
+    .module('app', []);
 })();
 
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app')
-        .controller('MortgageCalculator', function($scope) {
+  angular
+    .module('app')
+    .controller('MortgageCalculator', MortgageCalculator);
 
+  MortgageCalculator.$inject = ['$scope'];
 
+  /* @ngInject */
+  function MortgageCalculator($scope) {
+    var vm = this;
+    vm.output = ;
+    vm.balance = "0";
+    vm.apr = "0";
+    vm.years = "0";
+    vm.month = "12";
 
- });
-    MortgageCalculator.$inject = ['$scope'];
+    activate();
 
-
-    function MortgageCalculator($scope) {
-        var vm = this;
-        vm.output = "Shit"
-
+    function activate() {
 
     }
+  }
 })();
