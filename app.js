@@ -10,23 +10,27 @@
 
   angular
     .module('app')
-    .controller('MortgageCalculator', MortgageCalculator);
+    .controller('MortgageController', MortgageController);
 
-  MortgageCalculator.$inject = ['$scope'];
+  MortgageController.$inject = [];
 
   /* @ngInject */
-  function MortgageCalculator($scope) {
+  function MortgageController() {
     var vm = this;
-    vm.output = ;
-    vm.balance = "0";
-    vm.apr = "0";
-    vm.years = "0";
-    vm.month = "12";
+    vm.balance = 0;
+    vm.apr = 0;
+    vm.years = 0;
+    vm.month = 12;
 
-    activate();
 
-    function activate() {
+  vm.calculateMortgage = function() {
 
+      var mir = ((vm.apr/100)/vm.month);
+      var nop = (vm.years*vm.month);
+      var cir = Math.pow((1+mir),nop);
+      var iq = (mir*cir)/(cir-1);
+      var final = (vm.balance*iq).toFixed(2);
+      console.log(final);
     }
   }
 })();

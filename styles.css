@@ -2,3 +2,9 @@
   text-align: left;
 
 }
+
+.form-control {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}

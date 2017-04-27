@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,31 @@
   <title>Mortgage Calculator</title>
   <h1 id="mainHeader">Mortgage Calculator</h1>
 </head>
-<body ng-controller="MortgageCalculator as vm">
-  <div id="mortgageInputs">
-<label id="loanBalance">Loan Balance</label>
-<input type="number" ng-model="vm.balance" id="balanceLeft"/>
 
-<label id="apr">Annual Percent rate of Charge (APR)</label>
-<input type="number" ng-model="vm.apr" min="1" max="100" id="percent"/>
+<body ng-controller="MortgageController as vm">
+  <div class="input-group">
+    <label id="loanBalance">Loan Balance</label>
+    <input type="number" ng-model="vm.balance" class="form-control"/>
 
+    <label id="apr">Annual Percent rate of Charge (APR)</label>
+    <input type="number" ng-model="vm.apr" min="1" max="100" class="form-control" />
 
-<label id="yearTerm">Years Remaining</label>
-<input type="number" ng-model="vm.years" id="years"/>
-<div id="choose">
-  <label><input type="radio" ng-model="vm.month" name="optradio" value ="12">Monthly</label>
-  <label><input type="radio" ng-model="vm.month" name="optradio" value = "6">Bimonthly</label>
-</div>
-</div>
-<button type="button" ng-click="myFunc()">Calculate Mortgage</button>
-<p>{{vm.month}}</p>
-<p>{{vm.balance}}</p>
-<p>{{vm.apr}}</p>
-<p>{{vm.years}}</p>
+    <label id="yearTerm">Years Remaining</label>
+    <input type="number" ng-model="vm.years" class="form-control"/>
+    <div id="choose">
+      <label>Monthly</label>
+      <input type="radio" ng-model="vm.month" name="optradio" value="12" class="form-control">
+      <label>Bimonthly</label>
+      <input type="radio" ng-model="vm.month" name="optradio" value="6" class="form-control">
+    </div>
+
+  </div>
+  <button type="button" ng-click="vm.calculateMortgage()">Calculate Mortgage</button>
+  <p ng-bind-html="output"></p>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
   <script src="app.js"></script>
 
 </body>
+
 </html>
