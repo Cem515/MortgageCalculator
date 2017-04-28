@@ -29,8 +29,8 @@
       var nop = (vm.years*vm.month);
       var cir = Math.pow((1+mir),nop);
       var iq = (mir*cir)/(cir-1);
-      var final = (vm.balance*iq).toFixed(2);
-      console.log(final);
+      var final = Math.round(vm.balance*iq).toFixed(2);
+      vm.output = final
     }
   }
 })();

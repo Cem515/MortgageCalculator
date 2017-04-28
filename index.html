@@ -12,14 +12,14 @@
 
 <body ng-controller="MortgageController as vm">
   <div class="input-group">
-    <label id="loanBalance">Loan Balance</label>
-    <input type="number" ng-model="vm.balance" class="form-control"/>
+    <label for="balance">Loan Balance</label>
+    <input type="number" ng-model="vm.balance" class="form-control" />
 
-    <label id="apr">Annual Percent rate of Charge (APR)</label>
+    <label for="APR">Annual Percent rate of Charge (APR)</label>
     <input type="number" ng-model="vm.apr" min="1" max="100" class="form-control" />
 
-    <label id="yearTerm">Years Remaining</label>
-    <input type="number" ng-model="vm.years" class="form-control"/>
+    <label for="comment">Years Remaining</label>
+    <input type="number" ng-model="vm.years" class="form-control" />
     <div id="choose">
       <label>Monthly</label>
       <input type="radio" ng-model="vm.month" name="optradio" value="12" class="form-control">
@@ -29,7 +29,8 @@
 
   </div>
   <button type="button" ng-click="vm.calculateMortgage()">Calculate Mortgage</button>
-  <p ng-bind-html="output"></p>
+  <label for="output"> Your Monthly Payment is</label>
+  <p>{{vm.output}}</p>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
   <script src="app.js"></script>
