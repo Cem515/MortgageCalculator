@@ -1,10 +1,31 @@
 #choose {
-  text-align: left;
-
+  text-align: center;
 }
 
-.form-control {
+#loanBalance {
+  text-align: center;
+}
+
+#percentRate {
+  text-align: center;
+}
+
+#yearsLeft {
+  text-align: center;
+}
+
+#calc {
   margin: auto;
-  width: 50%;
-  padding: 10px;
+  display: block;
+}
+
+#mainHeader {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+body {
+font-family: 'Cinzel', serif;
+  background-color: green;
+  color: white;
 }

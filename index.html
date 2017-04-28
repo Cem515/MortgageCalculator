@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 
   <title>Mortgage Calculator</title>
   <h1 id="mainHeader">Mortgage Calculator</h1>
@@ -12,14 +15,18 @@
 
 <body ng-controller="MortgageController as vm">
   <div class="input-group">
-    <label for="balance">Loan Balance</label>
-    <input type="number" ng-model="vm.balance" class="form-control" />
-
-    <label for="APR">Annual Percent rate of Charge (APR)</label>
-    <input type="number" ng-model="vm.apr" min="1" max="100" class="form-control" />
-
-    <label for="comment">Years Remaining</label>
-    <input type="number" ng-model="vm.years" class="form-control" />
+    <div id="loanBalance">
+      <label for="balance">Loan Balance</label>
+      <input type="number" ng-model="vm.balance" class="form-control" placeholder="0" required/>
+    </div>
+    <div id="percentRate">
+      <label for="APR">Annual Percent rate of Charge (APR)</label>
+      <input type="number" ng-model="vm.apr" min="1" max="100" class="form-control"  placeholder="0" required />
+    </div>
+    <div id="yearsLeft">
+      <label for="comment">Years Remaining</label>
+      <input type="number" ng-model="vm.years" class="form-control" placeholder="0" required/>
+    </div>
     <div id="choose">
       <label>Monthly</label>
       <input type="radio" ng-model="vm.month" name="optradio" value="12" class="form-control">
@@ -28,9 +35,9 @@
     </div>
 
   </div>
-  <button type="button" ng-click="vm.calculateMortgage()">Calculate Mortgage</button>
-  <label for="output"> Your Monthly Payment is</label>
-  <p>{{vm.output}}</p>
+  <button type="button" ng-click="vm.calculateMortgage()" id="calc">Calculate Mortgage</button>
+  <label for="output" id="phrase"> Your Monthly Payment is</label>
+  <p id="answer">{{vm.output}}</p>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
   <script src="app.js"></script>
