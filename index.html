@@ -12,22 +12,27 @@
   <title>Mortgage Calculator</title>
   <h1 id="mainHeader">Mortgage Calculator</h1>
 </head>
+<!--Controller -->
 
 <body ng-controller="MortgageController as vm">
   <div class="input-group">
     <div id="loanBalance">
+      <!--Enter Loan Balance Remaining -->
       <label for="balance">Loan Balance</label>
       <input type="number" ng-model="vm.balance" class="form-control" placeholder="0" required/>
     </div>
     <div id="percentRate">
+      <!--APR -->
       <label for="APR">Annual Percent rate of Charge (APR)</label>
-      <input type="number" ng-model="vm.apr" min="1" max="100" class="form-control"  placeholder="0" required />
+      <input type="number" ng-model="vm.apr" min="1" max="100" class="form-control" placeholder="0" required />
     </div>
     <div id="yearsLeft">
+      <!--Years Remaining -->
       <label for="comment">Years Remaining</label>
       <input type="number" ng-model="vm.years" class="form-control" placeholder="0" required/>
     </div>
     <div id="choose">
+      <!--Paid Frequencies -->
       <label>Monthly</label>
       <input type="radio" ng-model="vm.month" name="optradio" value="12" class="form-control">
       <label>Bimonthly</label>
